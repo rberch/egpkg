@@ -2,22 +2,21 @@
 % Please edit documentation in R/RcppExports.R
 \name{matching_subjects}
 \alias{matching_subjects}
-\title{Match subjects Rcpp}
+\title{Propensity Score matching}
 \usage{
 matching_subjects(x)
 }
 \arguments{
-\item{x}{NumericVector. This is the input}
+\item{x}{A numeric vector with probabilities}
 }
 \value{
-A list with two vectors (\code{match_id}, \code{match_x}).
+A list.
 }
 \description{
-Match subjects Rcpp
+Propensity Score matching
 }
 \examples{
 # Testing the function
-library(Rcpp)
-x = c(1,2,3,4,5,6)
+x <- runif(10)
 matching_subjects(x)
 }

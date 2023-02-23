@@ -1,13 +1,12 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-//' Match subjects Rcpp
-//' @return A list with two vectors (`match_id`, `match_x`).
-//' @param x NumericVector. This is the input
+//' Propensity Score matching
+//' @return A list.
+//' @param x A numeric vector with probabilities
 //' @examples
 //' # Testing the function
-//' library(Rcpp)
-//' x = c(1,2,3,4,5,6)
+//' x <- runif(10)
 //' matching_subjects(x)
 //' @export
 // [[Rcpp::export]]
