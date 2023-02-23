@@ -10,6 +10,17 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// matching_subjects
+List matching_subjects(const NumericVector& x);
+RcppExport SEXP _egpkg_matching_subjects(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const NumericVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(matching_subjects(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _egpkg_rcpp_hello_world() {
@@ -22,6 +33,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_egpkg_matching_subjects", (DL_FUNC) &_egpkg_matching_subjects, 1},
     {"_egpkg_rcpp_hello_world", (DL_FUNC) &_egpkg_rcpp_hello_world, 0},
     {NULL, NULL, 0}
 };
